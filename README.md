@@ -1,0 +1,3 @@
+Our journey began with a simple yet powerful realization: early detection is crucial in the fight against breast cancer, yet access to early diagnosis tools is limited for many. Inspired by stories of individuals affected by late diagnoses, we envisioned an AI-powered solution that could bridge this gap, making early detection more accessible and reliable.
+
+It's not just an app; it's a testament to our belief in leveraging technology for social good, aimed at empowering both doctors and patients with early diagnosis tools. Our journey is far from over, but every step forward is a step closer to changing the landscape of breast cancer detection.
