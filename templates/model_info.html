@@ -1,0 +1,69 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gen AI Breast Cancer Prediction</title>
+<style>
+  body { 
+    font-family: Arial, sans-serif; 
+    padding: 20px; 
+    background-color: #f0f2f5; 
+  }
+
+  button { 
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    display: block; 
+    margin-top: 40px; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+  }
+  
+
+  button:hover { 
+    opacity: 0.8; }
+
+  h1{
+    text-align: center; 
+  }
+
+ div{
+  margin:auto;
+  margin-top: 5%;
+  width: 40%;
+  background: white; 
+  padding: 30px; 
+  padding-bottom: 40px; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  h2{
+    text-align: center;
+    }
+
+  .scoreNum{
+     margin-left:25%;
+  }
+  
+</style>
+</head>
+<body>
+   
+<h1>Model Information</h1>
+<div>
+  <h2>Performance Metrics</h2>
+  <p class="scoreNum">Accuracy: {{ model_metrics.accuracy }}</p>
+  <p class="scoreNum">Precision: {{ model_metrics.precision }}</p>
+  <p class="scoreNum">Recall: {{ model_metrics.recall }}</p>
+  <button onclick="history.back()">Go Back</button>
+</div>
+
+</body>
+</html>

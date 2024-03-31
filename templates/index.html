@@ -1,0 +1,129 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GenAI: PCB</title>
+<style>
+  body { 
+    font-family: Arial, sans-serif; 
+    padding: 20px; 
+    background-color: #f0f2f5; 
+  }
+
+  h1, h4 { color: #333;
+    text-align: center;
+  }
+  form { 
+    background: white; 
+    width: 50%;
+    margin: auto;
+    padding: 30px; 
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    margin-bottom: 20px; 
+  }
+  label { color: #555; 
+    font-weight: bold;
+  }
+  button, input[type="reset"], .info-btn { 
+    background-color: #67c96b; 
+    color: white; padding: 10px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    display: block; 
+    text-align: center; 
+    text-decoration: none; 
+    margin-top: 20px; 
+    width: 150px;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  input[type="reset"] { 
+    background-color: #f75d52; 
+  }
+
+  .info-btn { 
+    background-color: #3ea5f7;
+  }
+
+  button:hover, input[type="reset"]:hover, .info-btn:hover { 
+    opacity: 0.8; 
+  }
+
+</style>
+</head>
+<body>
+
+<h1>GenAI: Breast Cancer Prediction</h1>
+<h4>Fan Yang, Dejing Chen</h4>
+<br><br>
+
+<form action="/result" method="post">
+<label>Thickness</label>
+1.0<input id="thickness" type="range" min="1.0" max="10.0" step="0.1" name="Thickness" oninput="thickness_disp.value = thickness.value">10.0     
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+[ Value: <output id="thickness_disp"></output> ]
+
+<br><br>
+
+<label>Size</label>
+1.0<input id="size" type="range" min="1.0" max="10.0" step="0.1" name="Size" oninput="size_disp.value = size.value">10.0
+<output id="size_disp"></output>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+[ Value: <output id="size_disp"></output> ]
+<br><br>
+
+<label>Shape</label>
+1.0<input id="shape" type="range" min="1.0" max="10.0" step="0.1" name="Shape" oninput="shape_disp.value = shape.value">10.0
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+[ Value: <output id="shape_disp"></output> ]
+<br><br>
+
+<label>Margination</label>
+1.0<input id="marg" type="range" min="1.0" max="10.0" step="0.1" name="Marg" oninput="marg_disp.value = marg.value">10.0
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+[ Value: <output id="marg_disp"></output> ] 
+<br><br>
+
+<label>Epithelial Cell Size</label>
+1.0<input id="epith" type="range" min="1.0" max="10.0" step="0.1" name="Epith" oninput="epith_disp.value = epith.value">10.0
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+[ Value: <output id="epith_disp"></output> ] 
+<br><br>
+
+<label>Bare Nuclei</label>
+1.0<input id="b1" type="range" min="1.0" max="10.0" step="0.1" name="b1" oninput="b1_disp.value = b1.value">10.0
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+[ Value: <output id="b1_disp"></output> ]
+<br><br>
+
+<label>Nucleoli</label>
+1.0<input id="nucleoli" type="range" min="1.0" max="10.0" step="0.1" name="nucleoli" oninput="nucleoli_disp.value = nucleoli.value">10.0
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+[ Value: <output id="nucleoli_disp"></output> ]
+<br><br>
+
+<label>Mitoses</label>
+1.0<input id="mitoses" type="range" min="1.0" max="10.0" step="0.1" name="Mitoses" oninput="mitoses_disp.value = mitoses.value">10.0
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+[ Value: <output id="mitoses_disp"></output> ] 
+<br><br>
+
+<div class="button-container">
+  <button type="submit">PREDICT</button>
+  <input type="reset" value="RESET">
+  <a href="/model_info" class="info-btn">Model Information</a>
+</div>
+</form>
+
+</body>
+</html>

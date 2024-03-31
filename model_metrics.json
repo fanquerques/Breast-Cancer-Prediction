@@ -1,0 +1,1 @@
+{"best_params": {"C": 100, "gamma": 0.001, "kernel": "rbf"}, "accuracy": 0.9714285714285714, "precision": 0.9644444444444444, "recall": 0.9732789855072463}

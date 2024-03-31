@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Model Information</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; background-color: #f0f2f5; }
+  h1, h2 { color: #333; }
+
+  p { color: #555; }
+  button{ 
+    background-color: #67c96b; 
+    color: white; padding: 10px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    display: block; 
+    text-align: center; 
+    text-decoration: none; 
+    margin-top: 40px; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+  }
+  button:hover, input[type="reset"]:hover { opacity: 0.8; }
+#result{
+  margin:auto;
+  margin-top: 5%;
+  width: 60%;
+  background: white; 
+  padding: 30px; 
+  padding-bottom: 50px; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+<body>
+<div id="result">
+  <h1>Analysis Result: </h1>
+  <p>The result indicates whether the tissue sample is benign or malignant based on the analysis.</p>
+  <h4>Base on your input, the Breast Cancer Class is: <span id="prediction">{{prediction}}</span></h4>
+  <h4 id="explanation"></h4>
+  <button onclick="history.back()">Go Back</button>
+  <script>
+    window.onload = function() {
+      var prediction = document.getElementById("prediction").innerText;
+      var explanation = document.getElementById("explanation");
+      if (prediction == "2") {
+        explanation.innerHTML += " This means the tissue sample is benign, indicating a <span style='color: red;'>non-cancerous</span> condition.";
+      } else if (prediction == "4") {
+        explanation.innerHTML += " This means the tissue sample is malignant, indicating a <span style='color: red;'>cancerous</span> condition.";
+      }
+    };
+</script>
+
+<div>
+</body>
+</html>
